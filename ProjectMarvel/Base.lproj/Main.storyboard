@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5z2-qb-i7a">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Marvel Collection View Controller-->
+        <scene sceneID="Bz4-3l-2Yf">
+            <objects>
+                <collectionViewController id="39d-PF-rmc" customClass="MarvelCollectionViewController" customModule="ProjectMarvel" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="lfU-bB-uau">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GOu-f0-YJo" customClass="CenterViewFlowLayout" customModule="ProjectMarvel" customModuleProvider="target">
+                            <size key="itemSize" width="157" height="181"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectioncell" id="BBh-Ck-kXX" customClass="CharacterCollectionViewCell" customModule="ProjectMarvel" customModuleProvider="target">
+                                <rect key="frame" x="20" y="0.0" width="157" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MV9-4y-1we">
+                                    <rect key="frame" x="0.0" y="0.0" width="157" height="181"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnY-Z7-Fax">
+                                            <rect key="frame" x="5" y="5" width="147" height="171"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opm-az-H1a">
+                                                    <rect key="frame" x="0.0" y="121.5" width="147" height="49.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rZz-Gf-Z0v">
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="121.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rZz-Gf-Z0v" secondAttribute="height" multiplier="157:130" id="PEG-gI-fmb"/>
+                                                        <constraint firstAttribute="width" constant="157" id="xfR-Y8-eRN"/>
+                                                        <constraint firstAttribute="height" constant="130" id="zJf-6c-cW4"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="xfR-Y8-eRN"/>
+                                                            <exclude reference="zJf-6c-cW4"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="rZz-Gf-Z0v" firstAttribute="top" secondItem="RnY-Z7-Fax" secondAttribute="top" id="Ebu-0E-2js"/>
+                                                <constraint firstItem="rZz-Gf-Z0v" firstAttribute="leading" secondItem="RnY-Z7-Fax" secondAttribute="leading" id="Ltm-xY-dIK"/>
+                                                <constraint firstAttribute="trailing" secondItem="opm-az-H1a" secondAttribute="trailing" id="U2m-k8-azj"/>
+                                                <constraint firstAttribute="trailing" secondItem="rZz-Gf-Z0v" secondAttribute="trailing" id="XCa-jb-rXP"/>
+                                                <constraint firstAttribute="height" constant="181" id="cll-3R-oen"/>
+                                                <constraint firstItem="rZz-Gf-Z0v" firstAttribute="width" secondItem="RnY-Z7-Fax" secondAttribute="width" id="fdV-Pf-Xfd"/>
+                                                <constraint firstItem="opm-az-H1a" firstAttribute="top" secondItem="rZz-Gf-Z0v" secondAttribute="bottom" id="gdL-gL-svT"/>
+                                                <constraint firstAttribute="bottom" secondItem="opm-az-H1a" secondAttribute="bottom" id="kwg-lW-qTv"/>
+                                                <constraint firstItem="opm-az-H1a" firstAttribute="leading" secondItem="RnY-Z7-Fax" secondAttribute="leading" id="lub-5D-ErD"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="cll-3R-oen"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RnY-Z7-Fax" firstAttribute="leading" secondItem="MV9-4y-1we" secondAttribute="leading" constant="5" id="51w-tp-jyo"/>
+                                        <constraint firstItem="RnY-Z7-Fax" firstAttribute="top" secondItem="MV9-4y-1we" secondAttribute="top" constant="5" id="72Z-YH-253"/>
+                                        <constraint firstAttribute="trailing" secondItem="RnY-Z7-Fax" secondAttribute="trailing" constant="5" id="LCh-f7-YNz"/>
+                                        <constraint firstAttribute="bottom" secondItem="RnY-Z7-Fax" secondAttribute="bottom" constant="5" id="cyK-Hm-3Kc"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="157" height="181"/>
+                                <connections>
+                                    <outlet property="characterImage" destination="rZz-Gf-Z0v" id="41r-gN-Peb"/>
+                                    <outlet property="containerView" destination="RnY-Z7-Fax" id="9Va-Le-kR0"/>
+                                    <outlet property="nameLabel" destination="opm-az-H1a" id="Deh-e0-38S"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="39d-PF-rmc" id="zRN-oA-Ftm"/>
+                            <outlet property="delegate" destination="39d-PF-rmc" id="dyi-na-HH3"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="N7U-QH-JO7">
+                        <nil key="title"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56h-KO-eRB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078.2608695652175" y="-589.28571428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mxe-fd-4H8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="5z2-qb-i7a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFit" id="OGs-Eg-vaw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="miv-9m-uFG">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="39d-PF-rmc" kind="relationship" relationship="rootViewController" id="3Xw-ve-6Vi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3n-s3-LeH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="-589"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

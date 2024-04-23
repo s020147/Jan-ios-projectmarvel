@@ -1,14 +1,7 @@
-// -------------------------------------------------------------------------
-// This item is the property of ResMed Ltd, and contains confidential and trade
-// secret information. It may not be transferred from the custody or control of
-// ResMed except as authorized in writing by an officer of ResMed. Neither this
-// item nor the information it contains may be used, transferred, reproduced,
-// published, or disclosed, in whole or in part, and directly or indirectly,
-// except as expressly authorized by an officer of ResMed, pursuant to written
-// agreement.
 //
-// Copyright (c) 2022 ResMed Ltd.  All rights reserved.
-// -------------------------------------------------------------------------
+//  Created by Dustin Tong on 2/14/24.
+//
+
 
 
 import UIKit
@@ -93,6 +86,7 @@ class MarvelCollectionViewController: UICollectionViewController, UISearchBarDel
         ]
         NSLayoutConstraint.activate(constraints)
         self.navigationItem.titleView = titleView
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "about me", style: .done, target: self, action: #selector(navigateToAboutPage))
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -101,6 +95,15 @@ class MarvelCollectionViewController: UICollectionViewController, UISearchBarDel
         
         if scrollView.isScrolledToBottom() {
             loadMoreData()
+        }
+    }
+    
+    @objc private func navigateToAboutPage() {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+
+        if let aboutPageViewController = storyBoard.instantiateViewController(withIdentifier: "AboutPageViewController") as? AboutPageViewController {
+            self.navigationController?.pushViewController(aboutPageViewController, animated: true)
         }
     }
     
@@ -171,7 +174,7 @@ extension MarvelCollectionViewController: UICollectionViewDelegateFlowLayout {
             self.loadingView?.activityIndicator.startAnimating()
         }
     }
-    
+        
     override func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
         if elementKind == UICollectionView.elementKindSectionFooter {
             self.loadingView?.activityIndicator.stopAnimating()
